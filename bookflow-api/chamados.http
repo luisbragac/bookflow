@@ -1,0 +1,32 @@
+GET http://127.0.0.1:8000/livros/
+
+###
+
+GET http://127.0.0.1:8000/livros/2
+
+###
+
+POST http://127.0.0.1:8000/livros/
+Content-Type: application/json
+
+{
+    "titulo": "Metamorfose",
+    "autor": "Kafka",
+    "ano_publicacao": 1957,
+    "disponivel": true
+}
+
+###
+
+PUT http://127.0.0.1:8000/livros/1
+Content-Type: application/json
+
+{
+    "titulo": "Senhora",
+    "autor": "José de Alencar",
+    "ano_publicacao": 1957,
+    "disponivel": true
+}
+
+###
+DELETE http://127.0.0.1:8000/livros/2
