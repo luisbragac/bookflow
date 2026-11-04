@@ -22,15 +22,15 @@ async def buscar_livro(livro_id: int):
             status_code=404,
             detail="Livro não encontrado"
         )
-    else:
-        return livro_buscado
+    
+    return livro_buscado
 
 @router.post("/", response_model = Livro)
 async def criar_livro(livro: LivroCriarAtualizar):
     repositorio = LivroRepositorio()
     return await repositorio.adicionar_livros(livro = livro)
 
-@router.put("/{livro_id}")
+@router.put("/{livro_id}", response_model = Livro)
 async def atualizar_livro(livro: LivroCriarAtualizar, livro_id: int):
     repositorio = LivroRepositorio()
 
